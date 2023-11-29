@@ -1,4 +1,3 @@
-vim9script
 # ==============================================================================
 # Preview file with quickfix error in a popup window
 # File:         autoload/qfpreview.vim
