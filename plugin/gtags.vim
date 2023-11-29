@@ -245,7 +245,7 @@ if !exists("g:Gtags_No_Auto_Jump")
 endif
 
 if !exists("g:Gtags_Close_When_Single")
-    let g:Gtags_Close_When_Single = 0
+    let g:Gtags_Close_When_Single = 1
 endif
 
 " -- ctags-x format 
@@ -465,6 +465,7 @@ function! s:ExecLoad(option, long_option, pattern, flags, ...)
     elseif g:Gtags_No_Auto_Jump == 1
         cgete l:result		" does not jump
     else
+        cclose
         cexpr! l:result		" jump
     endif
     if jump == 1
