@@ -517,7 +517,6 @@ function! s:GtagsCursorAndJump()
     let l:pattern = expand("<cword>")
     let l:option = "--from-here=\"" . line('.') . ":" . expand("%") . "\""
     call s:ExecLoad('', l:option, l:pattern, '', 1) " 1 means jump
-    cclose
 endfunction
 "
 " Show the current position on mozilla.
