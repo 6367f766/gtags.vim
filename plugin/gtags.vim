@@ -468,6 +468,7 @@ function! s:ExecLoad(option, long_option, pattern, flags, ...)
         cexpr! l:result		" jump
     endif
     if jump == 1
+        botright close
         cexpr! l:result		" jump
     endif
     let &efm = l:efm_org
