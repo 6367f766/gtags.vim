@@ -238,7 +238,7 @@ endif
 " 'Dont_Jump_Automatically' is deprecated.
 if !exists("g:Gtags_No_Auto_Jump")
     if !exists("g:Dont_Jump_Automatically")
-	let g:Gtags_No_Auto_Jump = 0
+	let g:Gtags_No_Auto_Jump = 1
     else
 	let g:Gtags_No_Auto_Jump = g:Dont_Jump_Automatically
     endif
@@ -465,7 +465,6 @@ function! s:ExecLoad(option, long_option, pattern, flags, ...)
     elseif g:Gtags_No_Auto_Jump == 1
         cgete l:result		" does not jump
     else
-        cclose
         cexpr! l:result		" jump
     endif
     if jump == 1
