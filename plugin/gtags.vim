@@ -465,10 +465,11 @@ function! s:ExecLoad(option, long_option, pattern, flags, ...)
     elseif g:Gtags_No_Auto_Jump == 1
         cgete l:result		" does not jump
     else
+        cclose
         cexpr! l:result		" jump
     endif
     if jump == 1
-        botright close
+        cclose
         cexpr! l:result		" jump
     endif
     let &efm = l:efm_org
@@ -516,8 +517,7 @@ function! s:GtagsCursorAndJump()
     let l:pattern = expand("<cword>")
     let l:option = "--from-here=\"" . line('.') . ":" . expand("%") . "\""
     call s:ExecLoad('', l:option, l:pattern, '', 1) " 1 means jump
-    cfirst
-    botright close
+    cclose
 endfunction
 "
 " Show the current position on mozilla.
